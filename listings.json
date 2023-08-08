@@ -1,0 +1,34 @@
+[
+  {
+    "listing": "/tutorials/index.html",
+    "items": [
+      "/tutorials/01-basics.html",
+      "/tutorials/02-repeated_measures.html",
+      "/tutorials/03-proportion_plot.html",
+      "/tutorials/04-mini_meta_delta.html",
+      "/tutorials/06-plotaesthetics.html",
+      "/tutorials/05-deltadelta.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/robust-beautiful/robust-beautiful.html",
+      "/blog/posts/bootstraps/bootstraps.html"
+    ]
+  },
+  {
+    "listing": "/API/index.html",
+    "items": [
+      "/API/load.html",
+      "/API/class.html",
+      "/API/bootstrap.html",
+      "/API/plotter.html",
+      "/API/plot_tools.html",
+      "/API/effsize.html",
+      "/API/confint_1group.html",
+      "/API/confint_2group_diff.html",
+      "/API/misc_tools.html"
+    ]
+  }
+]
