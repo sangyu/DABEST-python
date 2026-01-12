@@ -559,14 +559,12 @@ class Dabest(object):
         self.__x1_level = x1_level
 
         if self.__is_paired and self.__output_data.isnull().values.any():
-            warn1 = f"NaN values detected under paired setting and removed,"
+            warn1 = f"NaN values detected under paired setting,"
             warn2 = f" please check your data."
             warnings.warn(warn1 + warn2)
             if x is not None and y is not None:
                 rmname = self.__output_data[self.__output_data[y].isnull()][self.__id_col].tolist()
                 self.__output_data = self.__output_data[~self.__output_data[self.__id_col].isin(rmname)]
-            elif x is None and y is None:
-                self.__output_data.dropna(inplace=True)
 
         # Check if there is a typo on paired
         if self.__is_paired and self.__is_paired not in ("baseline", "sequential"):

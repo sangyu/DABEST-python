@@ -452,6 +452,34 @@ def test_32_multigroups_baseline_change_palette():
     return multi_groups_baseline.mean_diff.plot(custom_palette="Dark2", delta_text=True)
 
 @pytest.mark.mpl_image_compare(tolerance=8)
+def test_33_multi_paired_different_sizes():
+    # Test for GitHub issue #216: multi-group paired data with different sample sizes
+    plt.rcdefaults()
+    np.random.seed(9999)
+
+    # Create three test pairs with different sample sizes (20, 10, 40)
+    c1DF = pd.DataFrame({'Test 1_pre': norm.rvs(loc=3, scale=0.4, size=20)})
+    t1DF = pd.DataFrame({'Test 1_post': norm.rvs(loc=3.5, scale=0.5, size=20)})
+    t2DF = pd.DataFrame({'Test 2_pre': norm.rvs(loc=2.5, scale=0.6, size=10)})
+    t3DF = pd.DataFrame({'Test 2_post': norm.rvs(loc=3, scale=0.75, size=10)})
+    t4DF = pd.DataFrame({'Test 3_pre': norm.rvs(loc=3.5, scale=0.75, size=40)})
+    t5DF = pd.DataFrame({'Test 3_post': norm.rvs(loc=3.25, scale=0.4, size=40)})
+
+    df = pd.concat([c1DF, t1DF, t2DF, t3DF, t4DF, t5DF], axis=1)
+    df["ID"] = pd.Series(range(1, len(df)+1))
+
+    multi_paired_diff_sizes = load(
+        df,
+        idx=(("Test 1_pre", "Test 1_post"),
+             ("Test 2_pre", "Test 2_post"),
+             ("Test 3_pre", "Test 3_post")),
+        paired="baseline",
+        id_col="ID"
+    )
+
+    return multi_paired_diff_sizes.mean_diff.plot()
+
+@pytest.mark.mpl_image_compare(tolerance=8)
 def test_99_style_sheets():
     # Perform this test last so we don't have to reset the plot style.
     plt.rcdefaults()
