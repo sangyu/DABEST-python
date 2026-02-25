@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    - "**/*.ipynb"
+    - "**/*.qmd"
+    - "!tests/**"
 
 format:
   html:
