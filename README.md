@@ -173,6 +173,17 @@ snippets.
 
 ## How to cite
 
+**Getting over ANOVA: Estimation graphics for multi-group comparisons**
+
+*Zinan Lu, Jonathan Anns, Yishan Mai, Rou Zhang, Kahseng Lian, Nicole
+MynYi Lee, Shan Hashir, Lucas Wang Zhuoyu, A. Rosa Castillo Gonzalez,
+Joses Ho, Hyungwon Choi, Sangyu Xu, Adam Claridge-Chang*
+
+bioRxiv preprint 2026.
+[10.64898/2026.01.26.701654](http://dx.doi.org/10.64898/2026.01.26.701654)
+
+[PDF](https://www.biorxiv.org/content/10.64898/2026.01.26.701654v1.full.pdf)
+
 **Moving beyond P values: Everyday data analysis with estimation plots**
 
 *Joses Ho, Tayfun Tumkaya, Sameer Aryal, Hyungwon Choi, Adam
