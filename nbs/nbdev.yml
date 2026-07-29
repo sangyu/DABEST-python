@@ -7,3 +7,8 @@ website:
   description: "Data Analysis and Visualization using Bootstrap-Coupled Estimation."
   repo-branch: master
   repo-url: "https://github.com/acclab/DABEST-python"
+
+format-links:
+  - html
+  - format: commonmark
+    text: Markdown
